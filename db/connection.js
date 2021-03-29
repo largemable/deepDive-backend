@@ -16,4 +16,5 @@ mongoose
 		console.log('connection failed!');
 	});
 
+// const DB_URL = mongodb+srv://caffeine-dreams:k6l3LXnOIc62moON@cluster0.0kym9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 module.exports = mongoose;
