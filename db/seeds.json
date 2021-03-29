@@ -1,0 +1,26 @@
+[
+    {
+      "title": "Currents",
+      "artist": "Tame Impala",
+      "artwork": "https://upload.wikimedia.org/wikipedia/en/9/9b/Tame_Impala_-_Currents.png",
+      "genre": "Rock",
+      "year": "2017",
+      "reviews": []
+    },
+    {
+      "title": "Dark Side of the Moon",
+      "artist": "Pink Floyd",
+      "artwork": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",
+      "genre": "Rock",
+      "year": "1973",
+      "reviews": []
+    },
+    {
+        "title": "Steve McQueen",
+      "artist": "Prefab Sprout",
+      "artwork": "https://upload.wikimedia.org/wikipedia/en/2/2c/Stevemcqueen.jpg",
+      "genre": "new wave",
+      "year": "1985",
+      "reviews": []
+    }
+]
