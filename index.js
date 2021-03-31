@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Controllers 
+// Controllers
 const albumsController = require('./controllers/albums');
 app.use('/albums', albumsController);
 
