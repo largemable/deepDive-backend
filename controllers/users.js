@@ -18,7 +18,6 @@ router.post('/', (req, res, next) => {
 })
 
   // UPDATE
-  // PATCH /albums/:id
   router.patch('/:id', (req, res, next) => {
     const id = req.params.id
     const userData = req.body
@@ -28,7 +27,7 @@ router.post('/', (req, res, next) => {
   })
 
 
-// Delete one
+// Delete
 router.delete('/:id', (req, res, next) => {
     const id = req.params.id
     User.findOneAndDelete({_id: id})
