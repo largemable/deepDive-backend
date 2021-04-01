@@ -33,7 +33,9 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/signin', (req, res, next) => {
-	User.findOne({ name: req.body.name })
+	User.findOne({ name: req.body.name });
+	bcrypt
+		.compare(req.body.password, User.password)
 		// Pass the user and the request to createUserToken
 		.then((user) => createUserToken(req, user))
 		// createUserToken will either throw an error that

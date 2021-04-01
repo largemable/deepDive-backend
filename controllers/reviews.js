@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const { requireToken } = require('../middleware/auth');
+// const { requireToken } = require('../middleware/auth');
 
 // require album model
 const Album = require('./../models/Album');
 
 // CREATE
 // POST /reviews/
-router.post('/', requireToken, (req, res, next) => {
+router.post('/', (req, res, next) => {
 	// get the review data from the body of the request
 	const reviewData = req.body;
 	// get the album id from the body
@@ -27,7 +27,7 @@ router.post('/', requireToken, (req, res, next) => {
 
 // DESTROY
 // DELETE /reviews/:id
-router.delete('/:id', requireToken, (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
 	const id = req.params.id;
 	Album.findOne({ 'reviews._id': id })
 		.then((album) => {
@@ -40,7 +40,7 @@ router.delete('/:id', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH /reviews/:id
-router.patch('/:id', requireToken, (req, res, next) => {
+router.patch('/:id', (req, res, next) => {
 	const id = req.params.id;
 	const reviewData = req.body;
 
