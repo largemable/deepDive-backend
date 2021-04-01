@@ -14,7 +14,6 @@ router.get('/', (req, res, next) => {
 });
 
 // SHOW
-// GET /albums/:id
 router.get('/:id', (req, res, next) => {
 	const id = req.params.id;
 	Album.findById(id)
@@ -23,7 +22,6 @@ router.get('/:id', (req, res, next) => {
 });
 
 // CREATE
-// POST /albums/
 router.post('/', requireToken, (req, res, next) => {
 	const albumData = req.body;
 	Album.create(albumData)
@@ -32,7 +30,6 @@ router.post('/', requireToken, (req, res, next) => {
 });
 
 // UPDATE
-// PATCH /albums/:id
 router.patch('/:id', requireToken, (req, res, next) => {
 	const id = req.params.id;
 	const albumData = req.body;
@@ -42,7 +39,6 @@ router.patch('/:id', requireToken, (req, res, next) => {
 });
 
 // DESTROY
-// DELETE /albums/:id
 router.delete('/:id', requireToken, (req, res, next) => {
 	const id = req.params.id;
 	Album.findOneAndDelete({ _id: id })

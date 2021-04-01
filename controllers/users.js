@@ -13,13 +13,7 @@ router.get('/', (req, res, next) => {
 		.catch(next);
 });
 
-// Create one
-// router.post('/signup', (req, res, next) => {
-// 	User.create(req.body)
-// 		.then((user) => res.status(201).json(user))
-// 		.catch(next);
-// });
-
+// Sign Up
 router.post('/signup', (req, res, next) => {
 	bcrypt
 		.hash(req.body.password, 10)
@@ -32,13 +26,10 @@ router.post('/signup', (req, res, next) => {
 		.catch(next);
 });
 
+// Sign In
 router.post('/signin', (req, res, next) => {
 	User.findOne({ name: req.body.name })
-		// Pass the user and the request to createUserToken
 		.then((user) => createUserToken(req, user))
-		// createUserToken will either throw an error that
-		// will be caught by our error handler or send back
-		// a token that we'll in turn send to the client.
 		.then((token) => res.json({ token }))
 		.catch(next);
 });
